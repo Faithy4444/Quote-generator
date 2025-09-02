@@ -13,7 +13,7 @@
   "license": "ISC",
   "author": "Faith Muzondo",
   "type": "module",
-  "main": "quote-generator.mjs",
+  "main": "index.js",
   "scripts": {
     "start": "node quote-generator.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
