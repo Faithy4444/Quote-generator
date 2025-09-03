@@ -1,8 +1,10 @@
+import { response } from "express";
 
 const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
 const quoteContainer = document.querySelector(".main-container");
-const nextBtn = document.querySelector("#next-btn")
+const nextBtn = document.querySelector("#next-btn");
+
 const apiUrl = "http://127.0.0.1:3000/";
 
 const fetchQuote = async () => {
@@ -30,5 +32,7 @@ const renderData = (quotePair) => {
 }
 
 nextBtn.addEventListener("click", fetchQuote)
+
+
 
 fetchQuote()
