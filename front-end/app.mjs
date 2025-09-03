@@ -1,4 +1,3 @@
-import { response } from "express";
 
 const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
