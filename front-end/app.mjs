@@ -5,7 +5,7 @@ const nextBtn = document.querySelector("#next-btn");
 const quoteForm = document.getElementById("form");
 const apiUrl = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
     ? 'http://127.0.0.1:3000'
-    : 'https://YOUR-PUBLIC-API-URL';
+    : 'https://quotegeneratorfaith-backend.hosting.codeyourfuture.io';
 
 const fetchQuote = async () => {
     try {
