@@ -3,7 +3,9 @@ const author = document.querySelector(".author");
 const quoteContainer = document.querySelector(".main-container");
 const nextBtn = document.querySelector("#next-btn");
 const quoteForm = document.getElementById("form");
-const apiUrl = "http://127.0.0.1:3000/";
+const apiUrl = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    ? 'http://127.0.0.1:3000'
+    : 'https://YOUR-PUBLIC-API-URL';
 
 const fetchQuote = async () => {
     try {
@@ -39,12 +41,12 @@ quoteForm.addEventListener("submit", async (event) => {
     const outcomeText = document.getElementById("outcome");
 
     if (!newAuthor || !newQuote) {
-        outcomeText = `Both quote and author are required!`;
+        outcomeText.innerText = `Both quote and author are required!`;
         return;
     }
 
     try {
-        const response = await fetch("http://127.0.0.1:3000/", {
+        const response = await fetch(apiUrl + "/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ quote:newQuote, author:newAuthor })

@@ -4,7 +4,10 @@ import cors from "cors";
 
 const app = express();
 const port = process.env.PORT || 3000;
-app.use(cors());
+app.use(cors({
+  origin: ['https://quotegeneratorfaith-frontend.hosting.codeyourfuture.io'],
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+}));
 
 app.use(express.json());
 const quotes = [
@@ -38,8 +41,8 @@ app.post("/", (req, res) => {
     res.status(201).json(newQuote);
 
 })
-app.listen(port, () => {
-    console.error(`Server running on port${port}`);
+app.listen(port, "0.0.0.0", () => {
+    console.error(`Server running on port ${port}`);
 
 });
 
